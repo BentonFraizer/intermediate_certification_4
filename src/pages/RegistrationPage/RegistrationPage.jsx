@@ -53,7 +53,7 @@ export const RegistrationPage = () => {
           </div>
           <div className="input-wrapper">
             <label>Password:</label>
-            <input type="text" placeholder="Введите пароль" value={password} onChange={passwordInputChangeHandler} />
+            <input type="password" placeholder="Введите пароль" value={password} onChange={passwordInputChangeHandler} />
           </div>
           <button type="submit" onClick={registrationFormSubmitHandler}>
             Зарегистрироваться
