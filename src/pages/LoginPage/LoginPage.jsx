@@ -43,6 +43,8 @@ export const LoginPage = () => {
     }
   };
 
+  const handleSubmitBtnDisable = () => email === '' || password === '';
+
   return (
     <div className="login">
       <h3>Форма входа</h3>
@@ -56,7 +58,7 @@ export const LoginPage = () => {
             <label>Password:</label>
             <input type="password" placeholder="Введите пароль" value={password} onChange={passwordInputChangeHandler} />
           </div>
-          <button type="submit" onClick={loginFormSubmitHandler}>
+          <button type="submit" onClick={loginFormSubmitHandler} disabled={handleSubmitBtnDisable()}>
             Войти
           </button>
         </form>

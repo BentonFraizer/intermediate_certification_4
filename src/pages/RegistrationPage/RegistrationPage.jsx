@@ -42,6 +42,8 @@ export const RegistrationPage = () => {
     }
   };
 
+  const handleSubmitBtnDisable = () => email === '' || password === '';
+
   return (
     <div className="registration">
       <h3>Форма регистрации</h3>
@@ -55,7 +57,7 @@ export const RegistrationPage = () => {
             <label>Password:</label>
             <input type="password" placeholder="Введите пароль" value={password} onChange={passwordInputChangeHandler} />
           </div>
-          <button type="submit" onClick={registrationFormSubmitHandler}>
+          <button type="submit" onClick={registrationFormSubmitHandler} disabled={handleSubmitBtnDisable()}>
             Зарегистрироваться
           </button>
         </form>
