@@ -15,6 +15,7 @@
   border-radius: 10px;
   padding: 5px 10px;
   cursor: pointer;
+  background-color: #fff;
 }
 
 .user-name {
@@ -24,4 +25,5 @@
 .user-avatar img {
   width: 50px;
   border-radius: 50%;
+  border: 1px solid #ccc;
 }
