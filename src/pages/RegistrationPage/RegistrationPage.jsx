@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './registration_page.css';
 import { ApiRoute, AppRoute } from '../../consts';
 
@@ -59,6 +59,9 @@ export const RegistrationPage = () => {
             Зарегистрироваться
           </button>
         </form>
+      </div>
+      <div className="registrate">
+        Зарегистрированы? <Link to={AppRoute.Login}>Войти</Link>
       </div>
       <div className="error">{errorMessage && <div className="error-message">{errorMessage}</div>}</div>
     </div>

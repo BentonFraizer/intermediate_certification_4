@@ -62,7 +62,7 @@ export const LoginPage = () => {
         </form>
       </div>
       <div className="registrate">
-        Ещё нет аккаунта? <br /> <Link to={AppRoute.Registration}>Зарегистрироваться</Link>
+        Ещё нет аккаунта? <Link to={AppRoute.Registration}>Зарегистрироваться</Link>
       </div>
       <div className="error">{errorMessage && <div className="error-message">{errorMessage}</div>}</div>
     </div>
