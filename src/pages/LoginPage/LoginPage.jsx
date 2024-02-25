@@ -33,6 +33,8 @@ export const LoginPage = () => {
       });
       const result = await response.json();
       if (result.success === true) {
+        console.log('result.token', result.token);
+        console.log('result.user', result.user);
         login(result.token, result.user);
         setErrorMessage('');
       } else {
@@ -59,7 +61,7 @@ export const LoginPage = () => {
             <label>Password:</label>
             <input type="password" placeholder="Введите пароль" value={password} onChange={passwordInputChangeHandler} />
           </div>
-          <MyButton primary label="Войти" onClick={loginFormSubmitHandler} disabled={isSubmitBtnDisabled} />
+          <MyButton primary label="Войти" onClickFn={loginFormSubmitHandler} disabled={isSubmitBtnDisabled} />
         </form>
       </div>
       <div className="registrate">
