@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './login_page.css';
 import { ApiRoute, AppRoute } from '../../consts';
 import { useAuthContext } from '../../context/authContext';
+import { MyButton } from '../../components/MyButton/MyButton';
 
 export const LoginPage = () => {
   const [email, setEmail] = useState('');
@@ -32,6 +33,8 @@ export const LoginPage = () => {
       });
       const result = await response.json();
       if (result.success === true) {
+        console.log('result.token', result.token);
+        console.log('result.user', result.user);
         login(result.token, result.user);
         setErrorMessage('');
       } else {
@@ -42,6 +45,8 @@ export const LoginPage = () => {
       console.error(error);
     }
   };
+
+  const isSubmitBtnDisabled = email === '' || password === '';
 
   return (
     <div className="login">
@@ -56,9 +61,7 @@ export const LoginPage = () => {
             <label>Password:</label>
             <input type="password" placeholder="Введите пароль" value={password} onChange={passwordInputChangeHandler} />
           </div>
-          <button type="submit" onClick={loginFormSubmitHandler}>
-            Войти
-          </button>
+          <MyButton primary label="Войти" onClickFn={loginFormSubmitHandler} disabled={isSubmitBtnDisabled} />
         </form>
       </div>
       <div className="registrate">

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './registration_page.css';
 import { ApiRoute, AppRoute } from '../../consts';
+import { MyButton } from '../../stories/MyButton';
 
 export const RegistrationPage = () => {
   const navigate = useNavigate();
@@ -42,6 +43,8 @@ export const RegistrationPage = () => {
     }
   };
 
+  const isSubmitBtnDisabled = email === '' || password === '';
+
   return (
     <div className="registration">
       <h3>Форма регистрации</h3>
@@ -55,9 +58,10 @@ export const RegistrationPage = () => {
             <label>Password:</label>
             <input type="password" placeholder="Введите пароль" value={password} onChange={passwordInputChangeHandler} />
           </div>
-          <button type="submit" onClick={registrationFormSubmitHandler}>
+          <MyButton label={'Зарегистрироваться'} onClickFn={registrationFormSubmitHandler} disabled={isSubmitBtnDisabled} />
+          {/* <button type="submit" onClick={registrationFormSubmitHandler} disabled={handleSubmitBtnDisable()}>
             Зарегистрироваться
-          </button>
+          </button> */}
         </form>
       </div>
       <div className="registrate">

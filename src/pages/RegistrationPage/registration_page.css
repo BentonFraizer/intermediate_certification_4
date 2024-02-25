@@ -21,11 +21,13 @@
   flex-direction: column;
   justify-content: space-around;
   height: 100%;
+  align-items: center;
 }
 
 .registration .input-wrapper {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
 .registration .error {
