@@ -20,3 +20,11 @@ npm run cypress:open
 Ожидать выполнения теста.
 
 ---
+
+Работа со storybook.
+
+Для работы со storybook необходимо выполнить следующую команду:
+
+```
+npm run storybook
+```
